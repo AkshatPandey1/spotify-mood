@@ -6,7 +6,6 @@ let loaded = false;
 let baseURL = "https://api.spotify.com/v1";
 
 function Profile(props) {
-    let [buttonNumber, setNumber] = useState(-1);
     let [userData, setData] = useState({});
 
     function loadedData(data) {
@@ -21,14 +20,15 @@ function Profile(props) {
                     Authorization: `Bearer ${props.token}`,
                 },
             })
-            .then((data) => loadedData(data.data));
+            .then((data) => loadedData(data.data))
+            .catch((err) => console.log(err));
     }, [props.token, setData]);
 
     return (
         <div className={"profile-card"}>
             {loaded ? (
                 <div>
-                    {userData.images || userData.images.length > 0 ? (
+                    {userData.images && userData.images.length > 0 ? (
                         <div style={{height: "150px"}}>
                             <img
                                 src={userData.images[0].url}

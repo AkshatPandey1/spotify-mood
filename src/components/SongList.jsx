@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
+let baseURL = "https://api.spotify.com/v1";
 function SongList(props) {
-    let baseURL = "https://api.spotify.com/v1";
     let [songs, setSongs] = useState([]);
     let [buttonNumber, setNumber] = useState(-1);
     let [subButton, setSubNumber] = useState(0);
@@ -17,12 +17,13 @@ function SongList(props) {
 
     function colorButton(selectedButton, unselectedButtons) {
         if (unselectedButtons) {
-            document.querySelector(unselectedButtons[1]).style.opacity = 1;
-            document.querySelector(unselectedButtons[0]).style.opacity = 1;
+            document.querySelector(unselectedButtons[1]).style.opacity = 0.7;
+            document.querySelector(unselectedButtons[0]).style.opacity = 0.7;
         }
-        document.querySelector(selectedButton).style.opacity = 0.5;
+        document.querySelector(selectedButton).style.opacity = 1;
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function getRecent() {
         axios
             .get(baseURL + "/me/player/recently-played", {
@@ -33,6 +34,7 @@ function SongList(props) {
             .then((data) => setRecent(data.data.items));
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function getTopArtists(term) {
         let {data} = axios
             .get(baseURL + "/me/top/artists?time_range=" + term, {
@@ -44,6 +46,7 @@ function SongList(props) {
         console.log(data);
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     function getTopTracks(term) {
         axios
             .get(baseURL + "/me/top/tracks?time_range=" + term, {
@@ -71,6 +74,12 @@ function SongList(props) {
         } else {
             getTopArtists(term[subButton]);
             colorButton(".b3", [".b1", ".b2"]);
+                        colorButton(
+                ".sb" + String(subButton + 1),
+                [".sb1", ".sb2", ".sb3"].filter((value, index) => {
+                    return index !== subButton;
+                })
+            );
         }
     }, [
         buttonNumber,

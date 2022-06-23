@@ -8,18 +8,17 @@ function Login() {
 
     return (
         <div className={"div-size"}>
-                <h1>Spotify Profile Viewer</h1>
+            <h1>Spotify Profile Viewer</h1>
 
             <div className={"login"}>
                 <a
-                    href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                    href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing,streaming`}
                 >
                     Login to Spotify
                 </a>
             </div>
         </div>
-    )
-
+    );
 }
 
-export default Login
+export default Login;
