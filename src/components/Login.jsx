@@ -12,7 +12,7 @@ function Login() {
 
             <div className={"login"}>
                 <a
-                    href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing,streaming`}
+                    href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing,user-modify-playback-state`}
                 >
                     Login to Spotify
                 </a>
