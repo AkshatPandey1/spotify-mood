@@ -1,0 +1,147 @@
+@font-face {
+    font-family: Spotify;
+    src: url("fonts/CircularStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Spotify;
+    font-weight: bold;
+    src: url("fonts/CircularStd-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Spotify-light;
+    src: url("fonts/CircularStd-Black.otf") format("opentype");
+}
+
+body {
+    background: linear-gradient(82deg, #000000, #5ce7e7, #63e505, #081300) fixed;
+    background-size: 240% 240%;
+    animation: gradient-animation 16s ease infinite;
+    color: white;
+    font-family: Spotify, sans-serif;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+body h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.login {
+    height: 100%;
+    text-align: center;
+    font-size: 3.5rem;
+    opacity: 1;
+    display: grid;
+    place-items: center;
+}
+
+.div-size {
+    height: 600px;
+}
+
+.login a:hover {
+    opacity: 0.7;
+}
+
+.login a {
+    color: black;
+    font-family: Spotify, sans-serif;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.cards {
+    text-align: center;
+}
+
+.profile-card {
+    margin-top: 50px;
+    padding: 20px 0;
+    width: 400px;
+    height: 600px;
+    background-color: rgba(36, 36, 36, 0.4);
+    border-radius: 4%;
+    text-align: center;
+}
+
+.profile-card h1 {
+    padding-top: 10px;
+    font-size: 2rem;
+    color: white;
+}
+
+.song-list {
+    margin-top: 50px;
+    height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+.song-list .row {
+    cursor: pointer;
+}
+
+.song-list .row:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.song-list h1 {
+    padding-top: 0;
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+.song-list h2 {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.song-list h1:hover {
+    color: #63e505;
+}
+
+.profile-card .song-list-buttons {
+    margin-top: 35px;
+}
+
+.profile-card .song-list-buttons h6 {
+    cursor: pointer;
+    color: rgba(0, 250, 0, 0.7);
+}
+
+.profile-card .song-list-buttons h6:hover {
+    color: rgba(0, 250, 0, 1);
+}
+
+.profile-card .song-list-buttons.sub {
+    width: 400px;
+    position: absolute;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.profile-card .song-list-buttons.sub h6 {
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: black;
+}
+
+.profile-card .song-list-buttons.sub h6:hover {
+    color: rgba(250, 0, 200, 1);
+}
