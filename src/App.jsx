@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import "react-spotify-auth/dist/index.css";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Player from "./components/Player";
@@ -66,7 +65,7 @@ function App() {
                                 </ul>
                                 <ul className="navbar-nav">
                                     <li className="nav-item active">
-                                        <a className="nav-link" onClick={logout}>Logout</a>
+                                        <a className="nav-link" href={"/"} onClick={logout}>Logout</a>
                                     </li>
                                 </ul>
                             </div>

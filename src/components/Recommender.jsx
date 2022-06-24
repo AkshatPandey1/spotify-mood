@@ -9,7 +9,6 @@ import {
 } from "react-bootstrap-icons";
 
 let baseURL = "https://api.spotify.com/v1";
-let moodProvided = false;
 let moodNum = 3;
 
 function Recommender(props) {
@@ -25,7 +24,6 @@ function Recommender(props) {
     }
 
     function submit(mood) {
-        moodProvided = true;
         moodNum = 3;
         let artistsIDs = seedArtists.map((artist) => artist.id);
         let genres = seedArtists
@@ -96,6 +94,7 @@ function Recommender(props) {
                                     onClick={() => window.open(val.external_urls.spotify)}
                                 >
                                     <iframe
+                                        title={index}
                                         style={{borderRadius: "12px"}}
                                         src={embedMaker(val.external_urls.spotify)}
                                         width="100%"
