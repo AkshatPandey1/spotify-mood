@@ -151,3 +151,19 @@ body h1 {
 .profile-card .song-control .player-buttons:hover {
     color: black;
 }
+
+.profile-card .song-details {
+    margin: 25px;
+    padding: 0 5%;
+    height: 240px;
+    color: white;
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.profile-card .song-details .highlight:hover {
+    background: rgba(0, 0, 0, 0.1);
+
+}

@@ -16,6 +16,14 @@ function Player(props) {
                 },
             })
             .catch((err) => console.log("Try again"));
+        axios
+            .get(baseURL + "/me/player/currently-playing", {
+                headers: {
+                    Authorization: `Bearer ${props.token}`,
+                },
+            })
+            .then((data) => setSong(data.data))
+            .catch((err) => console.log("Can't fetch play data"));
     }
 
     function playOPause() {
@@ -32,7 +40,7 @@ function Player(props) {
                     Authorization: `Bearer ${props.token}`,
                 },
             })
-            .catch((err) => console.log("Try again"))
+            .catch((err) => console.log("Try again"));
     }
 
     useEffect(() => {
@@ -42,7 +50,8 @@ function Player(props) {
                     Authorization: `Bearer ${props.token}`,
                 },
             })
-            .then((data) => setSong(data.data));
+            .then((data) => setSong(data.data))
+            .catch((err) => console.log("Can't fetch play data"));
     });
 
     return (
@@ -55,6 +64,7 @@ function Player(props) {
                             src={song.item.album.images[0].url}
                             alt={"Cannot load"}
                             style={{height: "150px", width: "150px"}}
+                            onClick={() => console.log(song)}
                         />
                     ) : (
                         <h1>No song image</h1>
@@ -91,6 +101,82 @@ function Player(props) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={"song-details"}>
+                        {song ? (
+                            <div>
+                                <div className="container">
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Name</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>{song.item.name}</h6>
+                                        </div>
+                                    </div>
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Artists</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>
+                                                {song.item.artists
+                                                    .map((artist) => {
+                                                        return artist.name;
+                                                    })
+                                                    .join(", ")}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Type</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>
+                                                {song.item.album.album_type.charAt(0).toUpperCase() +
+                                                    song.item.album.album_type.slice(1)}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Duration</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>
+                                                {String(song.item.duration_ms / 60000).slice(0, 4) +
+                                                    " mins"}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Popularity</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>{String(song.item.popularity) + "%"}</h6>
+                                        </div>
+                                    </div>
+                                    <div className="row highlight">
+                                        <div className="col col-sm-6">
+                                            <h6>Release Date</h6>
+                                        </div>
+                                        <div className="col col-sm-6">
+                                            <h6>
+                                                {String(
+                                                    new Date(
+                                                        song.item.album.release_date
+                                                    ).toLocaleDateString()
+                                                )}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <h1>Can't load song data</h1>
+                        )}
                     </div>
                 </div>
             ) : (
