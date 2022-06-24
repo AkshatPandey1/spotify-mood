@@ -63,6 +63,10 @@ body h1 {
     text-decoration: none;
 }
 
+.navbar {
+    padding: 0 10px;
+}
+
 .cards {
     text-align: center;
 }
@@ -166,4 +170,34 @@ body h1 {
 .profile-card .song-details .highlight:hover {
     background: rgba(0, 0, 0, 0.1);
 
+}
+
+.profile-card .question {
+    padding: 40% 0;
+}
+
+
+.profile-card .question .mood-buttons:hover {
+    cursor: pointer;
+    color: greenyellow;
+}
+
+.profile-card .recommended-songs .song-list {
+    height: 420px;
+    border-radius: 0;
+}
+
+.profile-card .recommended-songs .song-list .row {
+    padding: 1%;
+}
+button {
+    font-size: 2rem;
+    color: black;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    color: darkviolet;
 }

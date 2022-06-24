@@ -2,9 +2,10 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 let baseURL = "https://api.spotify.com/v1";
+
 function SongList(props) {
     let [songs, setSongs] = useState([]);
-    let [buttonNumber, setNumber] = useState(-1);
+    let [buttonNumber, setNumber] = useState(0);
     let [subButton, setSubNumber] = useState(0);
 
     function setRecent(items) {
@@ -36,14 +37,13 @@ function SongList(props) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     function getTopArtists(term) {
-        let {data} = axios
+        axios
             .get(baseURL + "/me/top/artists?time_range=" + term, {
                 headers: {
                     Authorization: `Bearer ${props.token}`,
                 },
             })
             .then((data) => setSongs(data.data.items));
-        console.log(data);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,7 +74,7 @@ function SongList(props) {
         } else {
             getTopArtists(term[subButton]);
             colorButton(".b3", [".b1", ".b2"]);
-                        colorButton(
+            colorButton(
                 ".sb" + String(subButton + 1),
                 [".sb1", ".sb2", ".sb3"].filter((value, index) => {
                     return index !== subButton;
@@ -122,8 +122,10 @@ function SongList(props) {
             ) : null}
             <div className={"song-list"}>
                 {songs.map((val, index) => {
+
                     return (
                         <div
+                            key={index}
                             className="row"
                             onClick={() => window.open(val.external_urls.spotify)}
                         >
