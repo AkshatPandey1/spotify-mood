@@ -73,13 +73,13 @@ function App() {
                         </nav>
                         <div className="container">
                             <div className="row justify-content-center">
-                                <div className="col col-lg-4 col-md-12">
+                                <div className="col col-lg-4 col-md-12 d-flex justify-content-center">
                                     <Player token={token}/>
                                 </div>
-                                <div className="col col-lg-4 col-md-12">
+                                <div className="col col-lg-4 col-md-12 d-flex justify-content-center">
                                     <Profile token={token}/>
                                 </div>
-                                <div className="col col-lg-4 col-md-12">
+                                <div className="col col-lg-4 col-md-12 d-flex justify-content-center">
                                     <Recommender token={token}/>
                                 </div>
                             </div>

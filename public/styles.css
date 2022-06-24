@@ -71,6 +71,10 @@ body h1 {
     text-align: center;
 }
 
+.cards .container .row .col {
+
+}
+
 .profile-card {
     margin-top: 50px;
     padding: 20px 0;
