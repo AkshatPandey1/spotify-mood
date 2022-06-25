@@ -102,15 +102,15 @@ function SongList(props) {
                 </div>
             </div>
             {buttonNumber !== -1 ? (
-                <div className={"song-list-buttons sub d-flex justify-content-center"}>
-                    <div className="row justify-content-center" style={{width: "70%"}}>
-                        <div className="col sb1">
+                <div className={"song-list-buttons sub"}>
+                    <div className="row justify-content-center">
+                        <div className="col col-3 sb1">
                             <h6 onClick={() => setSubNumber(0)}>Recent</h6>
                         </div>
-                        <div className="col sb2">
+                        <div className="col col-3 sb2">
                             <h6 onClick={() => setSubNumber(1)}>6 Months</h6>
                         </div>
-                        <div className="col sb3">
+                        <div className="col col-3 sb3">
                             <h6 onClick={() => setSubNumber(2)}>All Time</h6>
                         </div>
                     </div>
@@ -125,10 +125,10 @@ function SongList(props) {
                             className="row"
                             onClick={() => window.open(val.external_urls.spotify)}
                         >
-                            <div className={"col col-sm-2"}>
+                            <div className={"col col-2"}>
                                 <h2>{index + 1}</h2>
                             </div>
-                            <div className={"col col-sm-10"}>
+                            <div className={"col col-10"}>
                                 <h1>{val.name}</h1>
                             </div>
                         </div>

@@ -11,9 +11,8 @@ function Player(props) {
     function millisToMinutesAndSeconds(millis) {
         let minutes = Math.floor(millis / 60000);
         let seconds = ((millis % 60000) / 1000).toFixed(0);
-        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
     }
-
 
     function changeSong(type) {
         axios
@@ -51,15 +50,18 @@ function Player(props) {
     }
 
     useEffect(() => {
-        axios
-            .get(baseURL + "/me/player/currently-playing", {
-                headers: {
-                    Authorization: `Bearer ${props.token}`,
-                },
-            })
-            .then((data) => setSong(data.data))
-            .catch((err) => console.log("Can't fetch play data"));
-    });
+        const interval = setInterval(() => {
+            axios
+                .get(baseURL + "/me/player/currently-playing", {
+                    headers: {
+                        Authorization: `Bearer ${props.token}`,
+                    },
+                })
+                .then((data) => setSong(data.data))
+                .catch((err) => console.log("Can't fetch play data"));
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [props.token]);
 
     return (
         <div className={"profile-card"}>
