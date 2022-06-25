@@ -90,27 +90,27 @@ function SongList(props) {
         <div>
             <div className="song-list-buttons">
                 <div className="row">
-                    <div className="col-sm-4 b1">
+                    <div className="col b1">
                         <h6 onClick={() => setNumber(-1)}>Recently Played</h6>
                     </div>
-                    <div className="col-sm-4 b2">
+                    <div className="col b2">
                         <h6 onClick={() => setNumber(0)}>Top Tracks</h6>
                     </div>
-                    <div className="col-sm-4 b3">
+                    <div className="col b3">
                         <h6 onClick={() => setNumber(1)}>Top Artists</h6>
                     </div>
                 </div>
             </div>
             {buttonNumber !== -1 ? (
-                <div className={"song-list-buttons sub"}>
-                    <div className="row justify-content-center">
-                        <div className="col-sm-3 sb1">
+                <div className={"song-list-buttons sub d-flex justify-content-center"}>
+                    <div className="row justify-content-center" style={{width: "70%"}}>
+                        <div className="col sb1">
                             <h6 onClick={() => setSubNumber(0)}>Recent</h6>
                         </div>
-                        <div className="col-sm-3 sb2">
+                        <div className="col sb2">
                             <h6 onClick={() => setSubNumber(1)}>6 Months</h6>
                         </div>
-                        <div className="col-sm-3 sb3">
+                        <div className="col sb3">
                             <h6 onClick={() => setSubNumber(2)}>All Time</h6>
                         </div>
                     </div>

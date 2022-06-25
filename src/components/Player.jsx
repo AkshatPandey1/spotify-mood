@@ -8,6 +8,13 @@ let paused = false;
 function Player(props) {
     let [song, setSong] = useState(null);
 
+    function millisToMinutesAndSeconds(millis) {
+        let minutes = Math.floor(millis / 60000);
+        let seconds = ((millis % 60000) / 1000).toFixed(0);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+
     function changeSong(type) {
         axios
             .post(baseURL + "/me/player/" + type, null, {
@@ -145,8 +152,7 @@ function Player(props) {
                                         </div>
                                         <div className="col col-sm-6">
                                             <h6>
-                                                {String(song.item.duration_ms / 60000).slice(0, 4) +
-                                                    " mins"}
+                                                {millisToMinutesAndSeconds(song.item.duration_ms)}
                                             </h6>
                                         </div>
                                     </div>
