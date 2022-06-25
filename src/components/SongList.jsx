@@ -83,10 +83,6 @@ function SongList(props) {
         }
     }, [
         buttonNumber,
-        getRecent,
-        getTopArtists,
-        getTopTracks,
-        props.num,
         subButton,
     ]);
 
