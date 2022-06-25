@@ -65,14 +65,14 @@ function Recommender(props) {
 
     useEffect(() => {
         axios
-            .get(baseURL + "/me/top/tracks?time_range=medium_term&limit=10", {
+            .get(baseURL + "/me/top/tracks?time_range=short_term&limit=10", {
                 headers: {
                     Authorization: `Bearer ${props.token}`,
                 },
             })
             .then((data) => setSeedSongs(data.data.items));
         axios
-            .get(baseURL + "/me/top/artists?time_range=medium_term&limit=10", {
+            .get(baseURL + "/me/top/artists?time_range=short_term&limit=10", {
                 headers: {
                     Authorization: `Bearer ${props.token}`,
                 },
