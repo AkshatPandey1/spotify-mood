@@ -1,17 +1,17 @@
 @font-face {
     font-family: Spotify;
-    src: url("fonts/CircularStd-Black.otf") format("opentype");
+    src: url("./fonts/CircularStd-Black.otf") format("opentype");
 }
 
 @font-face {
     font-family: Spotify;
     font-weight: bold;
-    src: url("fonts/CircularStd-Black.otf") format("opentype");
+    src: url("./fonts/CircularStd-Black.otf") format("opentype");
 }
 
 @font-face {
     font-family: Spotify-light;
-    src: url("fonts/CircularStd-Black.otf") format("opentype");
+    src: url("./fonts/CircularStd-Black.otf") format("opentype");
 }
 
 body {
