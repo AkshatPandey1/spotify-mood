@@ -20,7 +20,7 @@ https://spotify-recom.herokuapp.com/
 
 ## Application
 
-![Screenshot](https://i.imgur.com/TMODgiH.jpeg)
+![Screenshot](https://i.imgur.com/CGKRixV.png)
 
 
 ## Authors
