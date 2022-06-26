@@ -24,7 +24,7 @@ function Recommender(props) {
     }
 
     function submit(mood) {
-        moodNum = 3;
+        moodNum = mood;
         let artistsIDs = seedArtists.map((artist) => artist.id);
         let genres = seedArtists
             .map((artist) => artist.genres.toString())
