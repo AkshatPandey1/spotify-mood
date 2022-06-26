@@ -8,10 +8,16 @@ import {Github} from "react-bootstrap-icons";
 function App() {
     const [token, setToken] = useState("");
 
+    function diff_minutes(dt2, dt1) {
+        let diff = (dt2.getTime() - dt1.getTime()) / 1000;
+        diff /= 60;
+        return Math.abs(Math.round(diff));
+
+    }
+
     useEffect(() => {
         const hash = window.location.hash;
         let token = window.localStorage.getItem("token");
-
         if (!token && hash) {
             token = hash
                 .substring(1)
@@ -21,6 +27,10 @@ function App() {
 
             window.location.hash = "";
             window.localStorage.setItem("token", token);
+            window.localStorage.tokenTime = new Date();
+        } else if (token && diff_minutes(new Date(window.localStorage.tokenTime), new Date()) > 30) {
+            logout();
+            alert("30 min session limit passed, login again")
         }
 
         setToken(token);
