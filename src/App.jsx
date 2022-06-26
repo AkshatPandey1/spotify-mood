@@ -12,7 +12,6 @@ function App() {
         let diff = (dt2.getTime() - dt1.getTime()) / 1000;
         diff /= 60;
         return Math.abs(Math.round(diff));
-
     }
 
     useEffect(() => {
@@ -28,9 +27,12 @@ function App() {
             window.location.hash = "";
             window.localStorage.setItem("token", token);
             window.localStorage.tokenTime = new Date();
-        } else if (token && diff_minutes(new Date(window.localStorage.tokenTime), new Date()) > 30) {
+        } else if (
+            token &&
+            diff_minutes(new Date(window.localStorage.tokenTime), new Date()) > 30
+        ) {
             logout();
-            alert("30 min session limit passed, login again")
+            alert("30 min session limit passed, login again");
         }
 
         setToken(token);
@@ -69,14 +71,25 @@ function App() {
                             >
                                 <ul className="navbar-nav">
                                     <li className="nav-item active">
-                                        <a className="nav-link"
-                                           href={"https://github.com/AkshatPandey1/spotify-mood"}><Github/></a>
+                                        <a
+                                            className="nav-link"
+                                            href={"https://github.com/AkshatPandey1/spotify-mood"}
+                                        >
+                                            <Github/>
+                                        </a>
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav">
-                                    <li className="nav-item active">
-                                        <a className="nav-link" href={"/"} onClick={logout}>Logout</a>
+                                    <li>
+                                        <a className="nav-link" href="https://www.buymeacoffee.com/akshatpandey1">Buy Me
+                                            A Coffee</a>
                                     </li>
+                                    <li className="nav-item active">
+                                        <a className="nav-link" href={"/"} onClick={logout}>
+                                            Logout
+                                        </a>
+                                    </li>
+
                                 </ul>
                             </div>
                         </nav>
