@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {PlayCircleFill} from "react-bootstrap-icons";
 
 let baseURL = "https://api.spotify.com/v1";
 
@@ -14,6 +15,32 @@ function SongList(props) {
             array.push(value.track);
         });
         setSongs(array);
+    }
+
+    function addToQueue(uri) {
+        axios
+            .post(
+                baseURL + "/me/player/queue?uri=" + uri,
+                {},
+                {
+                    headers: {
+                        Authorization: `Bearer ${props.token}`,
+                    },
+                }
+            )
+            .then(() => {
+                axios
+                    .post(
+                        baseURL + "/me/player/next",
+                        {},
+                        {
+                            headers: {
+                                Authorization: `Bearer ${props.token}`,
+                            },
+                        }
+                    )
+                    .then(() => console.log("Playing song"));
+            });
     }
 
     function colorButton(selectedButton, unselectedButtons) {
@@ -81,10 +108,7 @@ function SongList(props) {
                 })
             );
         }
-    }, [
-        buttonNumber,
-        subButton,
-    ]);
+    }, [buttonNumber, subButton]);
 
     return (
         <div>
@@ -118,19 +142,23 @@ function SongList(props) {
             ) : null}
             <div className={"song-list"}>
                 {songs.map((val, index) => {
-
                     return (
-                        <div
-                            key={index}
-                            className="row"
-                            onClick={() => window.open(val.external_urls.spotify)}
-                        >
-                            <div className={"col col-2"}>
+                        <div key={index} className="row" style={{padding: "0 5%"}}>
+                            <div className={"col col-2 d-flex justify-content-center"}>
                                 <h2>{index + 1}</h2>
                             </div>
-                            <div className={"col col-10"}>
-                                <h1>{val.name}</h1>
+                            <div className={"col col-8"}>
+                                <h1>{val.name.slice(0, 20)}</h1>
                             </div>
+                            {buttonNumber !== 1 ? (
+                                <div
+                                    className={"col col-2 d-flex justify-content-center player-buttons"}
+                                    style={{fontSize: "1.5rem"}}
+                                    onClick={() => addToQueue(val.uri)}
+                                >
+                                    <PlayCircleFill/>
+                                </div>
+                            ) : null}
                         </div>
                     );
                 })}
