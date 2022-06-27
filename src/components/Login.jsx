@@ -8,7 +8,7 @@ function Login() {
 
   return (
     <div className={"div-size"}>
-      <h1>Spotify Profile Viewer</h1>
+      <h1>Spotify Recommender</h1>
 
       <div className={"login"}>
         <a
