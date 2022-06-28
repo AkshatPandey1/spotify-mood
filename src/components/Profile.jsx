@@ -32,6 +32,7 @@ function Profile(props) {
                         <div style={{height: "150px"}}>
                             <img
                                 src={userData.images[0].url}
+                                onClick={() => window.open(userData.uri)}
                                 style={{
                                     borderRadius: "100%",
                                     height: "150px",

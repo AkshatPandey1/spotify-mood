@@ -52,7 +52,7 @@ function App() {
                     <div className={"cards"}>
                         <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                             <a className="navbar-brand" href="/">
-                                Music Mood Recommender
+                                Music For Mood
                             </a>
                             <button
                                 className="navbar-toggler"

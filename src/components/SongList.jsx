@@ -147,7 +147,7 @@ function SongList(props) {
                             <div className={"col col-2 d-flex justify-content-center"}>
                                 <h2>{index + 1}</h2>
                             </div>
-                            <div className={"col col-8"} onClick={() => window.open(val.external_urls.spotify)}>
+                            <div className={"col col-8"} onClick={() => window.open(val.uri)}>
                                 <h1>{val.name.slice(0, 20)}</h1>
                             </div>
                             {buttonNumber !== 1 ? (

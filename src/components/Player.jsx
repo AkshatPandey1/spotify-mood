@@ -73,7 +73,7 @@ function Player(props) {
                             src={song.item.album.images[0].url}
                             alt={"Cannot load"}
                             style={{height: "150px", width: "150px"}}
-                            onClick={() => console.log(song)}
+                            onClick={() => window.open(song.item.uri)}
                         />
                     ) : (
                         <h1>No song image</h1>

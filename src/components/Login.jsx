@@ -8,7 +8,7 @@ function Login() {
 
   return (
     <div className={"div-size"}>
-      <h1>Music Mood Recommender</h1>
+      <h1>Music For Mood</h1>
 
       <div className={"login"}>
         <a
