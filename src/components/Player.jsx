@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {PlayCircleFill, SkipBackwardCircleFill, SkipForwardCircleFill,} from "react-bootstrap-icons";
+import {PlayCircleFill, SkipBackwardCircleFill, SkipForwardCircleFill, Spotify} from "react-bootstrap-icons";
 
 let baseURL = "https://api.spotify.com/v1";
 let paused = false;
@@ -82,7 +82,7 @@ function Player(props) {
                         style={{marginTop: "10px", cursor: "pointer"}}
                         onClick={() => window.open(song.item.external_urls.spotify)}
                     >
-                        {song.item.name.slice(0, 25)}
+                        {song.item.name.slice(0, 20)} <Spotify/>
                     </h4>
                     <div className="song-control">
                         <div className="container">

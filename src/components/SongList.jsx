@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {PlayCircleFill} from "react-bootstrap-icons";
+import {PlayCircleFill, Spotify} from "react-bootstrap-icons";
 
 let baseURL = "https://api.spotify.com/v1";
 
@@ -148,7 +148,7 @@ function SongList(props) {
                                 <h2>{index + 1}</h2>
                             </div>
                             <div className={"col col-8"} onClick={() => window.open(val.uri)}>
-                                <h1>{val.name.slice(0, 20)}</h1>
+                                <h1>{val.name.slice(0, 16)} <Spotify/></h1>
                             </div>
                             {buttonNumber !== 1 ? (
                                 <div
