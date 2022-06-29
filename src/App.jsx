@@ -80,10 +80,6 @@ function App() {
                                     </li>
                                 </ul>
                                 <ul className="navbar-nav">
-                                    <li>
-                                        <a className="nav-link" href="https://www.buymeacoffee.com/akshatpandey1">Buy Me
-                                            A Coffee</a>
-                                    </li>
                                     <li className="nav-item active">
                                         <a className="nav-link" href={"/"} onClick={logout}>
                                             Logout

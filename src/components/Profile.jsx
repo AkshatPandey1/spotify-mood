@@ -29,7 +29,7 @@ function Profile(props) {
             {loaded ? (
                 <div>
                     {userData.images && userData.images.length > 0 ? (
-                        <div style={{height: "150px"}}>
+                        <div style={{height: "150px", position: "relative"}}>
                             <img
                                 src={userData.images[0].url}
                                 onClick={() => window.open(userData.uri)}
@@ -39,7 +39,16 @@ function Profile(props) {
                                     width: "150px",
                                 }}
                                 alt={"Profile pic couldn't be loaded"}
+
                             />
+                            <img src={"Spotify-logo.png"} alt={"Spotify-logo"} style={{
+                                height: "30px",
+                                width: "30px",
+                                position: "absolute",
+                                right: "126px",
+                                top: "1px"
+                            }}/>
+
                         </div>
                     ) : (
                         <div
