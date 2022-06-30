@@ -77,13 +77,14 @@ function Player(props) {
                 >
                     {song.item.album.images && song.item.album.images.length > 0 ? (
                         <div>
+                            <a href={song.item.uri} style={{color: "black"}}>Open using Spotify <Spotify/></a>
+                            <br/>
                             <img
                                 src={song.item.album.images[0].url}
                                 alt={"Cannot load"}
-                                style={{height: "150px", width: "150px"}}
+                                style={{height: "130px", width: "130px"}}
                                 onClick={() => window.open(song.item.uri)}
                             />
-                            <img src={"Spotify-logo.png"} alt={"Spotify-logo"} style={{height: "30px", width: "30px", position: "absolute", right: "126px", top: "1px"}}/>
                         </div>
                     ) : (
                         <h1>No song image</h1>
