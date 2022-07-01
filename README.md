@@ -15,12 +15,12 @@ App features:
 
 Link:
 -
-https://spotify-recom.herokuapp.com/
+https://music-for-mood.herokuapp.com/
 
 
 ## Application
 
-![Screenshot](https://i.imgur.com/CGKRixV.png)
+![Screenshot](https://i.imgur.com/xOqQjiw.png)
 
 
 ## Authors
