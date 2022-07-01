@@ -59,7 +59,7 @@ function Player(props) {
                 })
                 .then((data) => setSong(data.data))
                 .catch((err) => console.log("Can't fetch play data"));
-        }, 5000);
+        }, 1000);
         return () => clearInterval(interval);
     }, [props.token]);
 
@@ -93,7 +93,7 @@ function Player(props) {
                         style={{marginTop: "10px", cursor: "pointer"}}
                         onClick={() => window.open(song.item.external_urls.spotify)}
                     >
-                        {song.item.name.slice(0, 20)} <Spotify/>
+                        {song.item.name.slice(0, 25)}
                     </h4>
                     <div className="song-control">
                         <div className="container">
