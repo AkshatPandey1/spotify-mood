@@ -3,6 +3,7 @@
 
 This project allows the user to get song recommendations based on their Spotify profile.
 The recommendations are provided to the user based on their mood.
+Made using ReactJS
 
 App features:
 -
