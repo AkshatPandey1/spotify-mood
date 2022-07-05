@@ -3,6 +3,7 @@
 
 This project allows the user to get song recommendations based on their Spotify profile.
 The recommendations are provided to the user based on their mood.
+Made using ReactJS
 
 App features:
 -
@@ -15,12 +16,12 @@ App features:
 
 Link:
 -
-https://spotify-recom.herokuapp.com/
+https://music-for-mood.herokuapp.com/
 
 
 ## Application
 
-![Screenshot](https://i.imgur.com/CGKRixV.png)
+![Screenshot](https://i.imgur.com/xOqQjiw.png)
 
 
 ## Authors
