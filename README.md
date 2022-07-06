@@ -8,9 +8,10 @@ Made using ReactJS
 App features:
 -
 - Allows playback control
-- Displays song description of the song that's currently being played
 - Allows user see their top artists and top tracks in 3 different time ranges
 - Allows user see their recently played songs
+- Allows user to create playlists
+- Displays song description of the song that's currently being played
 - Provides recommendations based on their mood
 - OAuth authentication
 
@@ -21,7 +22,7 @@ https://music-for-mood.herokuapp.com/
 
 ## Application
 
-![Screenshot](https://i.imgur.com/xOqQjiw.png)
+![Screenshot](https://i.imgur.com/MLocJcX.png)
 
 
 ## Authors
