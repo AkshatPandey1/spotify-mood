@@ -42,11 +42,11 @@ function Recommender(props) {
       "&seed_tracks=" +
       String(shuffle(trackIDs).slice(0, 2));
 
-    if (mood === 1) URL += "&min_energy=0&max_energy=0.3";
-    else if (mood === 2) URL += "&min_energy=0.3&max_energy=0.5";
-    else if (mood === 3) URL += "&min_energy=0.5&max_energy=0.7";
-    else if (mood === 4) URL += "&min_energy=0.6&max_energy=0.8";
-    else if (mood === 5) URL += "&min_energy=0.7&max_energy=1";
+    if (mood === 1) URL += "&min_energy=0&max_energy=0.3&min_valence=0.5&max_valence=1";
+    else if (mood === 2) URL += "&min_energy=0.3&max_energy=0.5&min_valence=0.5&max_valence=1.0";
+    else if (mood === 3) URL += "&min_energy=0.5&max_energy=0.7&min_valence=0.5&max_valence=1.0";
+    else if (mood === 4) URL += "&min_energy=0.6&max_energy=0.8&min_valence=0.5&max_valence=1.0";
+    else if (mood === 5) URL += "&min_energy=0.7&max_energy=1&min_valence=0.5&max_valence=1.0";
 
     axios
       .get(URL, {
